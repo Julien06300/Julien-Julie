@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Mini Mario-like</title>
+  <style>
+    html, body { margin:0; padding:0; height:100%; background:#1d1f21; }
+    #game { display:block; margin:0 auto; touch-action:none; }
+    .hud { position:fixed; top:8px; left:8px; right:8px; display:flex; justify-content:space-between; color:#fff; font-family:system-ui, -apple-system, sans-serif; font-weight:600; text-shadow:0 2px 2px rgba(0,0,0,.5); }
+    .btns { position:fixed; bottom:12px; left:12px; right:12px; display:flex; justify-content:space-between; gap:12px; }
+    .pad { display:flex; gap:12px; }
+    .btn { width:64px; height:64px; border-radius:50%; background:rgba(255,255,255,.15); border:2px solid rgba(255,255,255,.5); backdrop-filter: blur(6px); touch-action:none; }
+    .btn:active { transform: scale(.96); }
+    @media (min-width: 900px){ .btns { max-width:900px; left:50%; transform:translateX(-50%); } }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3.70.0/dist/phaser.min.js"></script>
+</head>
+<body>
+  <div class="hud"><div id="score">Pièces: 0</div><div id="status"></div></div>
+  <div id="game"></div>
+  <div class="btns">
+    <div class="pad">
+      <div class="btn" id="left"></div>
+      <div class="btn" id="right"></div>
+    </div>
+    <div class="pad">
+      <div class="btn" id="jump"></div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
